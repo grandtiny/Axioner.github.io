@@ -2,4 +2,4 @@
 sort: 1
 ---
 
-# 笔记1
+# Learning
