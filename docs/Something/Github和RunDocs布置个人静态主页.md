@@ -1,21 +1,22 @@
 # Github和RunDocs布置个人静态主页
 
-1.   默认有GitHub账号，已安装git
-2.   准备仓库
+## 1.默认有GitHub账号，已安装git
 
-​		2.1 新建一个repository
+## 2.准备仓库
 
-​		2.2 新建文件夹\docs
+### 2.1 新建一个repository
 
-​		2.3 新建分支`gh-pages`，存放网页相关文件
+### 2.2 新建文件夹\docs
 
-​		2.4 在repo的settings里选择GitHub pages，选定上述新建的文件夹和分支
+###	2.3 新建分支`gh-pages`，存放网页相关文件
 
-​		2.5 需要有一个index.html
+### 2.4 在repo的settings里选择GitHub pages，选定上述新建的文件夹和分支
 
-3.   准备RunDocs
+### 2.5 需要有一个index.html
 
-​		3.1 在\docs下新建四个文件
+## 3.准备RunDocs
+
+### 3.1 在\docs下新建四个文件
 
 ```
 //Gemfile
@@ -64,9 +65,9 @@ remote_theme: false
 theme: jekyll-rtd-theme  
 ```
 
-​		3.2 界面说明：\docs子文件夹对应左侧导航栏一级页面
+### 3.2 界面说明：\docs子文件夹对应左侧导航栏一级页面
 
-​		3.3 子文件夹中的README.md文件是一级页面命名和排序的关键
+### 3.3 子文件夹中的README.md文件是一级页面命名和排序的关键
 
 ​				首先在前三行中写明，代表这个一级页面排在左侧导航栏的第1个（第二个一级页面就改成2，以此类推）
 
@@ -78,21 +79,21 @@ sort: 1
 # 你的标题
 ```
 
-​		3.4 每个二级子页面就是这个一级页面文件夹下的markdown文件
+### 3.4 每个二级子页面就是这个一级页面文件夹下的markdown文件
 
-4.   可能会遇到的一些问题
+## 4.可能会遇到的一些问题
 
-     4.1 解决 ! [rejected] xxx -＞ xxx(fetch first)问题
+### 4.1 解决 ! [rejected] xxx -＞ xxx(fetch first)问题
 
-     ​		执行完`git pull --rebase origin master` 后，再执行`git push -u origin master` 
+​		执行完`git pull --rebase origin master` 后，再执行`git push -u origin master` 
 
 ​				出现这个错误的原因：github中的README.md文件不在本地代码目录中
 
-​		4.2 第一次push会遇到需要账号密码的情况，需要在GitHub账户设置里申请token
+### 4.2 第一次push会遇到需要账号密码的情况，需要在GitHub账户设置里申请token
 
-5.   关于git的一些指令
+## 5.关于git的一些指令
 
-​		5.1 新建代码库
+### 5.1 新建代码库
 
 ```
 git init //在当前目录新建一个代码库
@@ -100,7 +101,7 @@ git init [project-name] //新建一个目录，将其初始化为git代码库
 git clone [url] //下载项目
 ```
 
-​		5.2 配置
+### 5.2 配置
 
 ```
 //git配置文件为.gitconfig，它可以在用户主目录下进行全局配置，也可以在项目目录下进行单独的项目配置
@@ -110,7 +111,7 @@ git config [–global] user.name “[name]” //设置提交代码时的用户�
 git config [–global] user.email “[email address]” //设置提交代码时的用户邮箱
 ```
 
-​		5.3 对文件的增删改操作
+### 5.3 对文件的增删改操作
 
 ```
 git status //查看状态
@@ -124,7 +125,7 @@ git rm --cached [file] //停止追踪指定文件，但该文件会保留在工�
 git mv [file-original] [file-renamed] //修改文件名，并放入暂存区
 ```
 
-​		5.4 代码提交
+### 5.4 代码提交
 
 ```
 git commit -m [message] //代码从暂存区提交至仓库区
@@ -134,7 +135,7 @@ git commit -v //提交时显示所有diff信息
 git commit --amend -m [message] //使用一次新的commit，替代上一次commit，如果代码没有任何变化，则用来改写上一次commit的提交信息
 ```
 
-​		5.5 分支
+### 5.5 分支
 
 ```
 git branch // 显示所有本地分支
@@ -154,7 +155,7 @@ git rebase [branch] // 衍合指定分支到当前分支
 git remote update origin --prune //获取最新的远程分支列表
 ```
 
-​		5.6 远程操作
+### 5.6 远程操作
 
 ```
 git fetch [remote] // 下载远程仓库所有更改
@@ -167,7 +168,7 @@ git push [remote] --force // 强行推送当前分支到远程仓库，即使有
 git push -all // 推送所有分支到远程仓库
 ```
 
-​		5.7 撤销
+### 5.7 撤销
 
 ```
 git checkout [file] // 恢复暂存区指定文件到工作区
@@ -181,7 +182,7 @@ git stash pop // 将暂时未提交的变化移入
 find . -name “.git” | xargs rm -Rf //删除本地.git文件
 ```
 
-​		5.8 查看信息
+### 5.8 查看信息
 
 ```
 git log // 显示当前分支的版本历史
