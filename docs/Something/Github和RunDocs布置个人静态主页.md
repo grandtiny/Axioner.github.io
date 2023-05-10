@@ -165,7 +165,7 @@ git remote show [remote] // 显示某个远程仓库的信息
 git remote add [shortname] [branch] // 新建一个远程仓库，并命名
 git push [remote] [branch] // 上传本地指定分支到远程仓库
 git push [remote] --force // 强行推送当前分支到远程仓库，即使有冲突
-git push -all // 推送所有分支到远程仓库
+git push --all // 推送所有分支到远程仓库
 ```
 
 ### 5.7 撤销
